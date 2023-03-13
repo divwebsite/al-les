@@ -1,0 +1,1141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body { 
+	font-family: 'Montserrat', sans-serif; 
+	background: rgb(255, 255, 255);
+  background-color: #717171;
+}
+
+
+.main-header {
+    z-index: 100;
+    width: 100%;
+    background: #ff0000;
+	  box-shadow: 0Fx 3px 4px 0px rgba(0,0,0,.4);
+    position: fixed;
+}
+.menu-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1500px;
+    width: 100%;
+    margin: auto;
+    padding: 15px;
+}
+
+.menu-wrap p{
+    width: 100%;
+    margin-left: 24px;
+    color: rgb(255, 247, 0);
+    font-size: 10px;
+}
+.logo-wrap {
+    width: 400px;
+    height: 100px;
+    margin-left: -34px;
+    padding: auto;
+}
+.logo-wrap img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-left: 20px;
+}
+
+.main-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0vh;
+    transition: height .0s ease-out .4s, opacity .2s ease-out .2s, padding-left .2s ease-in 0s;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 400;
+    background-color: #ff0000;
+    padding-left: 100%;
+    word-spacing: -1px;
+}
+
+.main-nav a{
+    text-decoration: none;
+}
+
+.nav-item {
+    display: block;
+    padding: 7px 10px;
+    margin: 5px auto;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+}
+.nav-item:first-of-type {
+    margin-top: 20vh;
+}
+
+.drop-trigger {
+    height: 34px;
+    width: 50px;
+    position: relative;
+    background: rgba(0,0,0,0);
+    transition: all .1s ease-out 0s;
+    z-index: 450;
+    border-width: 0;
+    margin-left: auto;
+}
+.drop-trigger .btn-bar {
+    position: absolute;
+    display: block;
+    top: 20%;
+    right: -90%;
+    height: 4px;
+    width: 100%;
+    transition: all .4s ease-in 0s;
+    background: rgb(255, 255, 255);
+    margin: 0 auto;
+    transform-origin: 50% 50%;
+    transform: translateX(-50%) translateY(-0%) rotate(-0deg);
+}
+.btn-bar.middle {
+    top: 50%;
+    transform: translateX(-50%)  translateY(-50%) rotate(0deg);
+}
+.btn-bar.bottom {
+    top: calc(80% - 3px);
+}
+.nav-revert {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0);
+    z-index: 1;
+}
+#nav-tog {
+    display: none;
+}
+#nav-tog:checked ~ .drop-trigger .btn-bar {
+    transition-timing-function: ease-out;
+}
+#nav-tog:checked ~ .drop-trigger .btn-bar {
+    top: 50%;
+    background: rgb(255, 255, 255);
+}
+#nav-tog:checked ~ .drop-trigger .btn-bar.top {
+    transform: translateX(-50%)  translateY(-50%) rotate(-315deg);
+}
+#nav-tog:checked ~ .drop-trigger .btn-bar.middle {
+    transform: translateX(-50%)  translateY(-50%) rotate(-225deg);
+}
+#nav-tog:checked ~ .drop-trigger .btn-bar.bottom {
+    transform: translateX(-50%) translateY(-50%) rotate(-225deg);
+}
+#nav-tog:checked ~ .main-nav {
+    transition: height .0s ease-in 0s, opacity .2s ease-in 0s, padding-left .23s ease-out .21s;
+    opacity: 1;
+    height: 100vh;
+    padding-left: 0%;
+}
+
+@media screen and (min-width: 1310px){
+    .drop-trigger,
+    .nav-revert {
+        display: none;
+    }
+    .main-nav {
+        height: auto;
+        position: relative;
+        padding-left: 0%;
+        flex-direction: row;
+        justify-content: flex-end;
+        opacity: 1;
+        background: rgba(0,0,0,0);
+    }
+    .nav-item:first-of-type{
+        margin-top: 0;
+    }
+    .nav-item {
+        font-size: 18px;
+        margin: 0 5px;
+        color: rgb(250,250,250);
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 600px){
+  .menu-wrap p{
+    font-size: 25px;
+  }
+}
+
+
+/*All Pages*/
+
+.onetext, h3{
+  font-size: 30px;
+  color: #ffffff;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+  letter-spacing: 0.5px;
+  }
+  
+  .twotext, h2 {
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .maintext, .maintext{
+    color: #ffffff;
+    padding: 10px;
+  }
+
+  .a{
+    text-decoration: none;
+  }
+
+  .floating_btn {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    z-index: 10;
+  }
+  
+  @keyframes pulsing {
+    to {
+      box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+    }
+  }
+  
+  .contact_icon {
+    background-color: #08c05b;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translatey(0px);
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 0 0 0 #42db87;
+    -webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    font-weight: normal;
+    font-family: sans-serif;
+    text-decoration: none !important;
+    transition: all 300ms ease-in-out;
+  }
+  
+  
+  .text_icon {
+    margin-top: 8px;
+    color: #707070;
+    font-size: 13px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Home Page */
+
+
+.homeredirectbuttons, a{
+  text-decoration: none;
+  color: #fff;
+}
+
+
+
+
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  margin: 20px;
+  width: 340px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #000;
+  background-color: #ff0000;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.button:hover {
+  background-color: #ff2424;
+  box-shadow: 0px 15px 20px rgba(255, 0, 0, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+
+
+/*Vehicles*/
+
+.vehiclesbtnshop{
+  margin: auto;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #ff0000;
+  border: none;
+  width: 170px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+.vehiclesbtnshop:hover{
+  margin: auto;
+  font-size: 20px;
+  color: #ffffff;
+  color: #ffffff;
+  transition: 0.4s;
+  background-color: #b20000;
+  width: 170px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+
+
+img {
+  display: block;
+  width: 100%;
+  height: 300px;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 50px auto;
+  margin-bottom: 30px;
+
+}
+
+.cards_wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cards_wrap .card_item {
+  width: 25%;
+  padding: 10px;
+}
+
+.cards_wrap .card_inner {
+  background: #595959;
+}
+
+.cards_wrap .card_top {
+  width: 100%;
+  min-height: 225px;
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+.cards_wrap .card_bottom {
+  padding: 15px;
+}
+
+.cards_wrap .card_bottom .card_category {
+  text-transform: uppercase;
+  text-align: center;
+}
+.cards_wrap .card_bottom .card_creator {
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .cards_wrap .card_item {
+    width: 0%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cards_wrap .card_item {
+    width: 50%;
+  }
+}
+
+@media (max-width: 528px) {
+  .cards_wrap .card_top {
+    height: auto;
+  }
+  .cards_wrap .card_item {
+    width: 100%;
+  }
+}
+
+@keyframes animateButton {
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+   }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+   }
+}
+
+p{
+  font-size: 15px;
+  margin-top: 10px;
+  color: #000000;
+}
+
+
+
+
+
+
+
+
+
+/*About Us*/
+
+.responsive2 {
+  margin: auto;
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  height: auto;
+}
+
+
+
+.aboutustext{
+  color: #ffffff;
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+.aboutustextmain{
+  color: #ffffff;
+  font-size: 17px;
+  margin-top: 20px;
+  font-weight: 800;
+}
+
+
+
+
+
+
+
+
+
+/*Cars For Sale*/
+
+.column {
+  flex: 30%;
+  padding: 3px;
+  margin-top: -30px ;
+}
+img {
+  width: 100%;
+  height: 300px;
+}
+.container {
+   display: flex;
+}
+
+.wrapper2 {
+  border-radius: 5px;
+  display: inline-block;
+  background: #fff;
+  position: relative;
+  margin: 5px 10px;
+  width: 353px;
+  height: 450px;
+  overflow: hidden;
+  box-shadow: 0px 10px 25px #999;
+}
+
+
+
+
+
+/*BAKKIE WORLD*/
+
+.picbw1 {
+  height: 200px;
+  background: url(cars/2020\ Ford\ Ranger\ 2.2\ TDCI\ XL\ DCAB\ A.T.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw2 {
+  height: 200px;
+  background: url(cars/2019\ Toyota\ Hilux\ 2.9\ GD-6\ Raider\ E\ Cab.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw3 {
+  height: 200px;
+  background: url(cars/2021\ Toyota\ Hilux\ 2.8\ GD-6\ E\ Cab\ AT\ LEGEND.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw4 {
+  height: 200px;
+  background: url(cars/2015.\ Ford\ Ranger\ 2.2\ TDCI\ XL\ D\ CAB.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw5 {
+  height: 200px;
+  background: url(cars/2019\ Ford\ Kuga\ 1.5E\ coboost\ Ambiente.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw6 {
+  height: 200px;
+  background: url(cars/2018\ Toyota\ Fortuner\ 2.8GD-6\ Auto.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw7 {
+  height: 200px;
+  background: url(cars/2021\ Toyota\ Hilux\ 2.8\ GD-6\ Auto\ Legend\ ECab.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw8 {
+  height: 200px;
+  background: url(cars/2020\ Ford\ Ranger\ 2.2\ TDCIXLT\ 6SPD\ Sup\ Cab.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw9 {
+  height: 200px;
+  background: url(cars/2020\ Ford\ Ranger\ 2.2\ TDCI\ XL\ DCAB\ A.T.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw10 {
+  height: 200px;
+  background: url(cars/2013opelmeriva\ 1.4T.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw11 {
+  height: 200px;
+  background: url(cars/2019\ Ford\ Fiesta\ 1.0E\ coboost.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw12 {
+  height: 200px;
+  background: url(cars/2017\ Ford\ Everest\ 2.2\ TDCI\ XLT\ Auto.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw13 {
+  height: 200px;
+  background: url(cars/BMW\ 520\ D\ AT\ \(F\ 10\).jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw14 {
+  height: 200px;
+  background: url(cars/2022\ Toyota\ Hilux\ 2.4\ GD-6\ SRX\ E\ Cab.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw15 {
+  height: 200px;
+  background: url(cars/2020\ Honda\ Balade\ 1.5T\ rend.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw16 {
+  height: 200px;
+  background: url(cars/VW\ iguan\ 1.4T\ Si\ T\ rendline.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw17 {
+  height: 200px;
+  background: url(cars/2012\ Mercedes\ Benz\ E-350\ CDi\ Auto\ AV\ antgarde.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw18 {
+  height: 200px;
+  background: url(cars/2015\ X\ T\ rail\ 1.6\ dCiLE\ 4x4.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw19 {
+  height: 200px;
+  background: url(cars/2015\ Ford\ Ranger\ 2.2\ TDCI\ XL\ DCAB.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw20 {
+  height: 200px;
+  background: url(cars/2018\ Ford\ Ranger\ 2.2\ TDCI\ XL\ Sup\ Cab.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw21 {
+  height: 200px;
+  background: url(cars/1990\ FIAT\ UNO\ TURBO.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw22 {
+  height: 200px;
+  background: url(cars/2012\ Chevrolet\ Lumina\ UTE\ SSV.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw23 {
+  height: 200px;
+  background: url(cars/Renault\ Kwid\ 1.0\ Dynamique.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw24 {
+  height: 200px;
+  background: url(cars/2006\ Smart.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picbw25 {
+  height: 200px;
+  background: url(cars/2015.\ Ford\ Ranger\ 2.2\ TDCI\ XL\ D\ CAB.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+
+
+
+
+
+
+
+
+/*DYNAMIC AUTO*/
+
+.picda1{
+  height: 200px;
+  background: url(cars/2002\ Toyota\ Camry.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picda2{
+  height: 200px;
+  background: url(cars/2016\ Ford\ Ranger\ 2.2\ TDCI\ XL\ PU\ DC.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picda3{
+  height: 200px;
+  background: url(cars/2021\ Toyota\ Urbann\ Cruiser\ 1.5\ XR\ AT.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+
+
+
+
+
+
+
+
+
+/*NB CAR SALES*/
+
+.picNB1{
+  height: 200px;
+  background: url(cars/2022\ land\ cruiser.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+
+
+
+
+
+
+
+/*AUTO TRADE*/
+
+
+
+
+
+
+
+
+
+/*4 WHEELS LICHTENBURG*/
+
+
+
+
+
+
+
+
+
+/*PRIVATE SELLERS*/
+
+.picPS1{
+  height: 200px;
+  background: url(cars/1981\ nissan\ 1400.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+.picPS2{
+  height: 200px;
+  background: url(cars/boot.jpg) no-repeat ;
+  background-size: 300px;
+  background-position: center;
+  padding: 0 0 20px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact4vehicles{
+  margin: auto;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #ff0000;
+  border: none;
+  width: 170px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+
+
+.brandtext{
+color: #fff;
+font-size: larger;
+font-weight: 900;
+text-decoration: underline 5px solid red;
+}
+
+
+
+
+
+
+
+/*About Us*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Services*/
+
+section {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  width: 100%;
+  padding: 0 1em 1em 1em;
+  text-align: center;
+  margin-top: 10px;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  padding: 2em 1.5em;
+  background: linear-gradient(#505050 50%, #ff0000 50%);
+  background-size: 100% 200%;
+  background-position: 0 2.5%;
+  border-radius: 5px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: 0.5s;
+}
+.icon-wrapper {
+  background-color: #ff0000;
+  position: relative;
+  margin: auto;
+  font-size: 30px;
+  height: 2.5em;
+  width: 2.5em;
+  color: #ffffff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: 0.5s;
+}
+.card:hover {
+  background-position: 0 100%;
+}
+.card:hover .icon-wrapper {
+  background-color: #ffffff;
+  color: #ff0000;
+}
+.card:hover h3 {
+  color: #ffffff;
+}
+.card:hover p {
+  color: #f0f0f0;
+}
+@media screen and (min-width: 768px) {
+  section {
+    padding: 0 2em;
+  }
+  .column {
+    flex: 0 50%;
+    max-width: 50%;
+  }
+}
+@media screen and (min-width: 992px) {
+  section {
+    padding: 1em 3em;
+  }
+  .column {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+  }
+}
+
+
+.serviceinfotext{
+  color: #ffffff;
+  font-size: medium;
+  margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+  
+
+
+/*Contact Us*/
+
+
+
+
+
+
+
+
+
+
+
+/*License Renewal*/
+
+
+.responsive {
+  margin: auto;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+.licensetext{
+margin-top: 30px;
+font-size: 17px;
+color: rgb(255, 255, 255);
+padding: 10px;
+letter-spacing: 0.9px;
+}
+
+
+
+
+
+/*Footer*/
+
+
+.footer{
+  background: #ff0000;
+  margin-top: 50px;
+}
+
+.footer .box-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer .box-container .box{
+  margin: 2rem;
+  flex:1 1 30rem;
+  
+}
+
+.footer .box-container .box h3{
+  text-decoration: underline 2px solid yellow ;
+  font-size: 24px;
+  font-weight: bold;
+  color:#fff;
+}
+
+.footer .box-container .box p{
+  font-size: 15px;
+  color:#eee;
+  padding:1rem 0;
+  font-weight: bold;
+}
+
+.footer .box-container .box a{
+  margin-top: 10px;
+  font-size: 20px;
+  color:#eee;
+  padding: .4rem 0;
+  display: block;
+  font-weight: bold;
+}
+
+.footer .box-container .box a:hover{
+  text-decoration: underline;
+}
+
+.footer .box-container .box:nth-child(2){
+  text-align: center;
+}
+
+.footer .box-container form{
+  display: flex;
+  align-items: center;
+}
+
+.footer .box-container form .btn{
+  margin-top: 0px;
+}
+
+.footer .box-container form .btn:hover{
+  color:#333;
+  background:#ccc;
+  font-weight: bold;
+}
+
+.footer .credit{
+  font-size: 13px;
+  background:#b00000;
+  text-align: center;
+  color:#fff;
+  padding:2rem 1rem;
+  font-weight: bold;
+}
+
+.footer .credit a{
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+
+  .footer .box-container .box:last-child{
+      text-align: center;
+      font-weight: bold;
+  }
+
+  .footer .box-container .box:last-child p{
+      font-size: 1.7rem;
+      font-weight: bold;
+  }
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
